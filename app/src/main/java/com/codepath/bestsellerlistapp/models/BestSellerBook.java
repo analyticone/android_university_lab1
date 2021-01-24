@@ -24,4 +24,17 @@ public class BestSellerBook {
 
    @SerializedName("amazon_product_url")
    public String amazonUrl;
+
+   @Override
+   public String toString() {
+      return "BestSellerBook{" +
+              "rank=" + rank +
+              ", title='" + title + '\'' +
+              ", author='" + author + '\'' +
+              ", bookImageUrl='" + bookImageUrl + '\'' +
+              ", publisher='" + publisher + '\'' +
+              ", description='" + description + '\'' +
+              ", amazonUrl='" + amazonUrl + '\'' +
+              '}';
+   }
 }
