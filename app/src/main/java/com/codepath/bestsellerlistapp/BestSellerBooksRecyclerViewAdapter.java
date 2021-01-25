@@ -1,10 +1,13 @@
 package com.codepath.bestsellerlistapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,7 +46,7 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
     }
 
     @Override
-    public void onBindViewHolder(final BookViewHolder holder, int position) {
+    public void onBindViewHolder(final BookViewHolder holder, final int position) {
         holder.mItem = books.get(position);
         holder.mBookTitle.setText(books.get(position).title);
         holder.mBookAuthor.setText(books.get(position).author);
@@ -63,6 +66,14 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
                 }
             }
         });
+        holder.mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(books.get(position).amazonUrl));
+                context.startActivity(browserIntent);
+            }
+        });
     }
 
     @Override
@@ -78,6 +89,8 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
         public final TextView mDescription;
         public final ImageView mBookImage;
         public BestSellerBook mItem;
+        public final Button mButton;
+
 
         public BookViewHolder(View view) {
             super(view);
@@ -88,6 +101,7 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
             mDescription = (TextView) view.findViewById(R.id.book_description);
 
             mBookImage = (ImageView) view.findViewById(R.id.book_image);
+            mButton = (Button) view.findViewById(R.id.buy_button);
         }
 
         @Override

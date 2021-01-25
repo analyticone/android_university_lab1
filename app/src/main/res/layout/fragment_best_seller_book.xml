@@ -17,15 +17,12 @@
 
     <ImageView
         android:id="@+id/book_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="125dp"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="9dp"
         android:layout_marginBottom="0dp"
-        android:layout_toEndOf="@+id/ranking"
         android:contentDescription="book image"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -79,7 +76,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="0dp"
-        android:background="#547995"
+        android:background="#567b95"
         android:text="@string/buy_on_amazon"
         android:textColor="@android:color/background_light" />
 
